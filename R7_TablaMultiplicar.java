@@ -19,6 +19,27 @@ public class R7_TablaMultiplicar {
             int res=mult*num;//para mostrar el resultado de las operaciones de la tabla
             
             System.out.println(num+"X"+mult+"="+res);
-        }
+        }//fin del while
+
+        /*
+        Utilizando un for en lugar de un while se vería asi:
+        
+            Scanner scanner=new Scanner(System.in);
+
+            //variables
+            int num;
+            int mult=0;
+            int res; //producto de la multiplicacion
+    
+            //programa
+            System.out.print("Que tabla quieres ver: ");
+            num=scanner.nextInt();
+    
+            for(int i=0;i<10;i++){//te cuenta del uno al diez para mostrar la tabla
+                mult++;
+                res=num*mult;
+                System.out.println(num+"X"+mult+"="+res);
+            }
+        */
     }
 }
