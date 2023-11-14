@@ -15,6 +15,8 @@ public class R5_V2_VocalONoVocal {
         //variables chachis
         ArrayList<Character> vocales=new ArrayList<>();
         ArrayList<Character> consonantes=new ArrayList<>();
+        ArrayList<Character> numeros=new ArrayList<>();
+        ArrayList<Character> simbolos=new ArrayList<>();
         
         //variables
         String letra="";
@@ -37,10 +39,20 @@ public class R5_V2_VocalONoVocal {
                     vocales.add(caracterLetra);
                 }  
             }
-            else{
-                //System.out.println(cartConvert+" es una consonante");
-                if(!consonantes.contains(caracterLetra)){//me aseguro que no se repitan consonantes
+            else if("123456789".indexOf(caracterLetra)!=-1){//distinguimos numeros
+                if(!numeros.contains(caracterLetra)){
+                    numeros.add(caracterLetra);
+                }
+            }
+            else if("qwrtypsdfghjklñzxcvbnmQWRTYPSDFGHJKLÑZXCVBNM".indexOf(caracterLetra)!=-1){//distinguimos consonantes
+                if(!consonantes.contains(caracterLetra)){
                     consonantes.add(caracterLetra);
+                }
+            }
+            else{//todo lo que no sean numeros ni letras
+                //System.out.println(cartConvert+" es una consonante");
+                if(!simbolos.contains(caracterLetra)){
+                    simbolos.add(caracterLetra);
                 }
 
             }
@@ -50,8 +62,7 @@ public class R5_V2_VocalONoVocal {
         //salida
         System.out.println("Has introducido las siguiente vocales: "+vocales);
         System.out.println("Has introducido las siguientes no vocales: "+consonantes);
-        
-
-
+        System.out.println("Has introducido los siguientes numeros: "+numeros);
+        System.out.println("Has introducido los siguientes simbolos: "+simbolos);
     }
 }
