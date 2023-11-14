@@ -5,18 +5,21 @@ public class R5_V2_VocalONoVocal {
     public static void main(String[]args){
         /*
         La actividad numero 5 de repetitivas pero quiere que metamos todos de una en lugar de letra a letra
+        
+        Explicacion de como funciona indexOf...basicamente indica la posicion de un caracter en cadena
+        o palabra o elemento en array(no estoy tan seguro de esto ultimo), en caso de que el elemento que metamos
+        no cumpla la condicion previa, es decir no este en nuestro string, nos duvuelve -1
         */
         Scanner scanner=new Scanner(System.in);
         
         //variables chachis
-        ArrayList<String> vocales=new ArrayList<>();
-        ArrayList<String> consonantes=new ArrayList<>();
+        ArrayList<Character> vocales=new ArrayList<>();
+        ArrayList<Character> consonantes=new ArrayList<>();
         
         //variables
         String letra="";
         int longLetra;
         char caracterLetra;
-        String cartConvert;
         
         //programa
         System.out.println("Dime todas tus letras a estudiar");
@@ -27,18 +30,17 @@ public class R5_V2_VocalONoVocal {
         for(int i=0;i!=longLetra;i++){//un bucle que mira todos los caracteres desde el comienzo hasta el final
             
             caracterLetra=letra.charAt(i);
-            cartConvert=Character.toString(caracterLetra);//lo convierto a String poruqe el metodo contains es solo para string
             
-            if("aeiouAEIOU".contains(cartConvert)){//distinguimos si es o no vocal
+            if("aeiouAEIOU".indexOf(caracterLetra)!=-1){//distinguimos si es o no vocal
                 //System.out.println(cartConvert+" es una vocal");
-                if(!vocales.contains(cartConvert)){//me aseguro de que no se repitan vocales
-                    vocales.add(cartConvert);
+                if(!vocales.contains(caracterLetra)){//me aseguro de que no se repitan vocales
+                    vocales.add(caracterLetra);
                 }  
             }
             else{
                 //System.out.println(cartConvert+" es una consonante");
-                if(!consonantes.contains(cartConvert)){//me aseguro que no se repitan consonantes
-                    consonantes.add(cartConvert);
+                if(!consonantes.contains(caracterLetra)){//me aseguro que no se repitan consonantes
+                    consonantes.add(caracterLetra);
                 }
 
             }
