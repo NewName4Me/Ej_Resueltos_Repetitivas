@@ -34,7 +34,6 @@ public class R5_V2_VocalONoVocal {
             caracterLetra=letra.charAt(i);
             
             if("aeiouAEIOU".indexOf(caracterLetra)!=-1){//distinguimos si es o no vocal
-                //System.out.println(cartConvert+" es una vocal");
                 if(!vocales.contains(caracterLetra)){//me aseguro de que no se repitan vocales
                     vocales.add(caracterLetra);
                 }  
@@ -50,7 +49,6 @@ public class R5_V2_VocalONoVocal {
                 }
             }
             else{//todo lo que no sean numeros ni letras
-                //System.out.println(cartConvert+" es una consonante");
                 if(!simbolos.contains(caracterLetra)){
                     simbolos.add(caracterLetra);
                 }
